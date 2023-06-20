@@ -41,9 +41,9 @@ export default async function Hijri_calendar(title, text, filename) {
         args: ['--no-sandbox', '--disable-setuid-sandbox'],
     }).catch(error => console.log(error));
     let page = await browser?.newPage();
-    let today = moment_hijri().locale('ar-SA').format('dddd'); // اليوم
-    let Hijri = moment_hijri().locale('ar-SA').format('iD iMMMM iYYYY'); // التاريخ الهجري
-    let Gregorian = moment_hijri().locale('ar-SA').format('LL'); // التاريخ الميلادي
+    let today = moment_hijri().locale('ar-EG').format('dddd'); // اليوم
+    let Hijri = moment_hijri().locale('ar-EG').format('iD iMMMM iYYYY'); // التاريخ الهجري
+    let Gregorian = moment_hijri().locale('ar-EG').format('LL'); // التاريخ الميلادي
     let Html = CrateHtml(today, Hijri, Gregorian, title, text); // return code html
     await page?.setViewport({ width: 500, height: 50 });
     await page?.setContent(Html, {
